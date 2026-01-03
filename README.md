@@ -13,5 +13,5 @@ Welcome to my journey! I have decided to challenge myself to learn and practice 
 | Day | Topic | Highlights | Code |
 |:---:|:---|:---|:---:|
 | 01 | Basics & Setup | env config, data types, strings & concatenation | [View Code](./day_01/main.cpp) |
-
+| 02 | combat simulator | data input and output, operators & conditional statements if, else if, else | [View Code](./day_02/main.cpp) |
 ---
