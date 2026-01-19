@@ -19,7 +19,7 @@ struct License {
     Details d;
 };
 
-struct People {
+struct Person {
     string full_name;
     string civil_status;
     int age;
@@ -27,56 +27,85 @@ struct People {
     License l;
 };
 
-void enter_person(People &p);
-void enter_person_details(People &p);
-void show_person_data(const People &p);
+void print_person(Person &p);
+void enter_person(Person &p);
+void enter_person_details(Person &p);
 
 int main() {
-    People p;
+    Person p;
+    char choice = 'y';
+    do {
 
-    cout << "Learning structures and pointers" << endl;
-    cout << "=========================" << endl;
+        cout << "------------------------------\n";
+        cout << "Enter person details:\n";
+        cout << "------------------------------\n";
 
-    enter_person(p);
-    enter_person_details(p);
-    show_person_data(p);
+        enter_person(p);
+        enter_person_details(p);
+
+        cout << "Do you want to enter details for another person? (y/n): ";
+        cin >> choice;
+        cin.ignore();
+        if (choice != 'y' && choice != 'Y') {
+            break;
+        }
+
+    } while (true);
 
     return 0;
 }
 
-void enter_person(People &p) {
-    cout << "--- Enter person details ---" << endl;
-    cout << "Enter a full name: ";
-    getline(cin >> ws, p.full_name);
-
-    cout << "Enter the status civil: ";
-    cin >> p.civil_status;
+void enter_person(Person &p) {
+    cout << "Enter full name: ";
+    getline(cin, p.full_name);
+    cout << "Enter civil status: ";
+    getline(cin, p.civil_status);
     cout << "Enter age: ";
     cin >> p.age;
-    cout << "Enter the rol: ";
-    cin >> p.rol;
+    cin.ignore();
+    cout << "Enter rol: ";
+    getline(cin, p.rol);
+    cout << "Enter birthdate: ";
+    getline(cin, p.l.birthdate);
+    cout << "Enter address: ";
+    getline(cin, p.l.address);
 }
 
-void enter_person_details(People &p) {
-    cout << "\n--- Driver's license information ---" << endl;
-    cout << "Enter the birthdate: ";
-    cin >> p.l.birthdate;
-    cout << "Enter the address: ";
-    cin >> p.l.address;
-
-    cout << "--- Additional details ---" << endl;
-    cout << "License number: ";
+void enter_person_details(Person &p) {
+    cout << "Enter license number: ";
     cin >> p.l.d.license_number;
-    cout << "License type: ";
+    cin.ignore();
+    cout << "Enter license type (A, B, C, etc.): ";
     cin >> p.l.d.type_license;
-    cout << "State: ";
-    cin >> p.l.d.state;
+    cin.ignore();
+    cout << "Enter state: ";
+    getline(cin, p.l.d.state);
+    cout << "Enter issue date: ";
+    getline(cin, p.l.d.issue_date);
+    cout << "Enter expiration date: ";
+    getline(cin, p.l.d.expiration_date);
+    cout << "Enter height: ";
+    cin >> p.l.d.height;
+    cout << "Enter weight: ";
+    cin >> p.l.d.weight;
+
+    cout << "\nPerson Details Entered:\n";
+    cout << "=========================\n";
+    print_person(p);
 }
 
-void show_person_data(const People &p) {
-    cout << "\n=========================" << endl;
-    cout << "Name: " << p.full_name << endl;
+void print_person(Person &p) {
+    cout << "Full name: " << p.full_name << endl;
+    cout << "Civil status: " << p.civil_status << endl;
     cout << "Age: " << p.age << endl;
-    cout << "License N#: " << p.l.d.license_number << endl;
-    cout << "=========================" << endl; 
+    cout << "Rol: " << p.rol << endl;
+    cout << "Birthdate: " << p.l.birthdate << endl;
+    cout << "Address: " << p.l.address << endl;
+    cout << "License number: " << p.l.d.license_number << endl;
+    cout << "License type: " << p.l.d.type_license << endl;
+    cout << "State: " << p.l.d.state << endl;
+    cout << "Issue date: " << p.l.d.issue_date << endl;
+    cout << "Expiration date: " << p.l.d.expiration_date << endl;
+    cout << "Height: " << p.l.d.height << endl;
+    cout << "Weight: " << p.l.d.weight << endl;
 }
