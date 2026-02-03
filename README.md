@@ -18,4 +18,5 @@ Welcome to my journey! I have decided to challenge myself to learn and practice 
 | 04 | inventory management system | functions, arrays, and nested control structures | [View Code](./day_04/main.cpp) |
 | 05 | license management simulator | nested structures, pass-by-reference functions | [View Code](./day_05/min.cpp) |
 | 06 | pointer concept | pointers, passing parameters via pointers, indirect memory manipulation | [View Code](./day_06/main.cpp) |
+| 07 | dynamic memory concept | Dynamic memory management with new and delete | [View Code](./day_07/main.cpp) |
 ---
