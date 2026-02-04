@@ -19,4 +19,5 @@ Welcome to my journey! I have decided to challenge myself to learn and practice 
 | 05 | license management simulator | nested structures, pass-by-reference functions | [View Code](./day_05/min.cpp) |
 | 06 | pointer concept | pointers, passing parameters via pointers, indirect memory manipulation | [View Code](./day_06/main.cpp) |
 | 07 | dynamic memory concept | Dynamic memory management with new and delete | [View Code](./day_07/main.cpp) |
+| 08 | dynamic vector | Implementation of a small program using a vector | [View Code](./day_08/main.cpp) |
 ---
